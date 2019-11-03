@@ -16,22 +16,20 @@ languageConfig.compilers = {
 };
 languageConfig.errors = require("./nexss.erlang.errors");
 languageConfig.languagePackageManagers = {
-  npm: {
-    installation: "wget https://s3.amazonaws.com/rebar3/rebar3 && chmod +x rebar3 && ./rebar3 local install",
-    messageAfterInstallation:
-      "", //this message will be displayed after this package manager installation, maybe some action needed etc.
-	newproject: "rebar3 new app <args>",
+  rebar: {
+    installation:
+      "wget https://s3.amazonaws.com/rebar3/rebar3 && chmod +x rebar3 && ./rebar3 local install",
+    messageAfterInstallation: "", //this message will be displayed after this package manager installation, maybe some action needed etc.
+    newproject: "rebar3 new app <args>",
     installed: "rebar3 deps <args>",
     search: "",
     install: "",
     uninstall: "",
     help: `repo: https://github.com/erlang/rebar3
 url: https://www.rebar3.org/docs`,
-    version: "composer version",
+    version: "rebar3 --version",
     init: () => {},
-    // if command not found in specification
-    // run directly on package manager
-    else: "composer <default> <args>"
+    else: "rebar3"
   }
 };
 
