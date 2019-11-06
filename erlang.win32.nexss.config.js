@@ -17,13 +17,15 @@ languageConfig.compilers = {
 languageConfig.errors = require("./nexss.erlang.errors");
 languageConfig.languagePackageManagers = {
   rebar: {
-    installation:
-      "wget https://s3.amazonaws.com/rebar3/rebar3 && chmod +x rebar3 && ./rebar3 local install",
-    messageAfterInstallation: "", //this message will be displayed after this package manager installation, maybe some action needed etc.
+    installation: `Powershell -File ${__dirname}/install/installRebar3.ps1`,
+    // installation: `powershell -Command "Invoke-WebRequest -Uri https://s3.amazonaws.com/rebar3/rebar3 -OutFile rebar3"`,
+    // "rm -rf rebar3 && git clone https://github.com/erlang/rebar3.git && cd rebar3 && bootstrap.bat && rebar3 local install",
+    messageAfterInstallation:
+      "Rebar3 has been compiled. Please copy rebar3 file to your PATH folder.", //this message will be displayed after this package manager installation, maybe some action needed etc.
     newproject: "rebar3 new app <args>",
     installed: "rebar3 deps <args>",
     search: "",
-    install: "",
+    install: "rebar3 install",
     uninstall: "",
     help: `repo: https://github.com/erlang/rebar3
 url: https://www.rebar3.org/docs`,
