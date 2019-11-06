@@ -1,5 +1,6 @@
 # @echo off
 $ErrorActionPreference = "Stop"
+$currentWorkingDir = (Get-Location).path
 Set-StrictMode -Version Latest
 Write-Output "Installing Rebar 3 .."
 Set-Variable temp $env:TEMP\rebar3
@@ -24,10 +25,10 @@ echo "Copying files.."
 
 $rebar3CmdPath = $rebar3Path + ".cmd"
 
-$currentWorkingDir = (Get-Location).path
 
-Copy-Item $rebar3Path $currentWorkingDir -ErrorVariable capturedErrors -ErrorAction SilentlyContinue
-Copy-Item $rebar3CmdPath $currentWorkingDir -ErrorVariable capturedErrors -ErrorAction SilentlyContinue
+echo "$rebar3Path -> $currentWorkingDir"
+Copy-Item $rebar3Path $currentWorkingDir
+Copy-Item $rebar3CmdPath $currentWorkingDir
 cd $currentWorkingDir
 
 # NOT AVAILABLE ON WINDOWS below
