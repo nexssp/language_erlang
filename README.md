@@ -2,6 +2,12 @@
 
 Erlang implementation
 
+## Erlang Programming Rules
+
+[Learn you some Erlang for Great Good](https://learnyousomeerlang.com/)  
+[Escript](http://erlang.org/doc/man/escript.html)  
+[Erlang Programming Rules](http://www.erlang.se/doc/programming_rules.shtml)
+
 ## Rebar 3
 
 ```sh
@@ -19,3 +25,9 @@ rebar3 new <template> <project-name>
 Installation https://hex.pm/docs/rebar3_usage
 
 ### Commands
+
+```sh
+nexss file add myfile.erl
+nexss myfile.erl # if you are not in the Nexss Programmer Project
+nexss start # if you added file to the Nexss Programmer Project
+```

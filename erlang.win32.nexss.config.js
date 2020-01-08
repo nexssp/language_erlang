@@ -6,7 +6,15 @@ languageConfig.url = "https://www.erlang.org";
 languageConfig.extensions = [".erl"];
 languageConfig.builders = {};
 languageConfig.compilers = {
-  erl: {
+  // https://erlangcentral.org/wiki/Running_Erlang_Code_From_The_Command_Line
+  // erl: {
+  //   install: "scoop install erlang",
+  //   // Cpp does not have possibility to compile and run on the fly. We need to save it as a exe file first.
+  //   command: "erl",
+  //   args: " erl -pa -run <file> main -noshell",
+  //   help: ``
+  // },
+  escript: {
     install: "scoop install erlang",
     // Cpp does not have possibility to compile and run on the fly. We need to save it as a exe file first.
     command: "escript",
