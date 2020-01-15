@@ -1,6 +1,6 @@
 # Erlang - Nexss PROGRAMMER 2.0
 
-Erlang implementation
+To Install Nexss Programmer please go to [Nexss Programmer CLI](https://github.com/nexssp/cli#readme) for more information.
 
 ## Erlang Programming Rules
 
