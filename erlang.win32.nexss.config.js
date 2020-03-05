@@ -3,6 +3,9 @@ languageConfig.title = "Erlang";
 languageConfig.description =
   "Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability. ";
 languageConfig.url = "https://www.erlang.org";
+languageConfig.founders = ["Joe Armstrong"];
+languageConfig.developers = ["Ericsson"];
+languageConfig.years = ["1986"];
 languageConfig.extensions = [".erl"];
 languageConfig.builders = {};
 languageConfig.compilers = {
