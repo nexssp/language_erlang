@@ -8,6 +8,8 @@ languageConfig.developers = ["Ericsson"];
 languageConfig.years = ["1986"];
 languageConfig.extensions = [".erl"];
 languageConfig.builders = {};
+// erl -noshell -eval 'io:fwrite("Hello, World!\n"), init:stop().'
+// erl -noshell -s helloworld start -s init stop
 languageConfig.compilers = {
   // https://erlangcentral.org/wiki/Running_Erlang_Code_From_The_Command_Line
   // erl: {
@@ -22,8 +24,8 @@ languageConfig.compilers = {
     // Cpp does not have possibility to compile and run on the fly. We need to save it as a exe file first.
     command: "escript",
     args: "<file>",
-    help: ``
-  }
+    help: ``,
+  },
 };
 languageConfig.errors = require("./nexss.erlang.errors");
 languageConfig.languagePackageManagers = {
@@ -44,8 +46,8 @@ languageConfig.languagePackageManagers = {
 url: https://www.rebar3.org/docs`,
     version: "rebar3 --version",
     init: () => {},
-    else: "rebar3"
-  }
+    else: "rebar3",
+  },
 };
 
 module.exports = languageConfig;

@@ -3,7 +3,7 @@
 %  STDIN
 
 set_value(Key, Value, List) ->
-    lists:keystore(Key, 1, List, {Key, Value}).
+    lists:keystore(Key, 1, List, { Key, Value }).
 
 main(_) ->
     NexssStdin = io:get_line(""),
