@@ -3,7 +3,7 @@
 let config;
 if (process.platform === "win32") {
   config = {
-    files: ["mochijson2.erl"],
+    files: ["mochijson2.erl", "mix.exs"],
     // We copy to previous folder as didn't work from current folder (Only on Nexss Programmer Projects).
     commands: [
       process.platform === "win32"
@@ -20,7 +20,12 @@ More about MIT License here: https://github.com/mochi/mochiweb/blob/master/LICEN
   config = {
     files: ["mochijson2.erl"],
     // We copy to previous folder as didn't work from current folder (Only on Nexss Programmer Projects).
-    commands: ["mix local.hex --force", "mix deps.get", "erlc mochijson2.erl"],
+    commands: [
+      "if ! command -v mix; then nexss erl install; nexss exs install; fi",
+      "mix local.hex --force",
+      "mix deps.get",
+      "erlc mochijson2.erl",
+    ],
     repos: ["https://github.com/mochi/mochiweb"],
     descriptions: [
       `It uses mochijson2.erl which is part of Mochiweb
