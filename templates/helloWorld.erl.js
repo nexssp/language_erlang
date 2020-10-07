@@ -7,8 +7,8 @@ if (process.platform === "win32") {
     // We copy to previous folder as didn't work from current folder (Only on Nexss Programmer Projects).
     commands: [
       process.platform === "win32"
-        ? `Powershell -Command "if (Test-Path src ) { cd src ; mv src/mochijson2.erl . ; cd ..} else { mix deps.get }"`
-        : `if [ -d src ]; then cd src ; mv src/mochijson2.erl . ; cd ..; else mix deps.get; fi`,
+        ? `Powershell -Command "if (Test-Path src ) { cd src ; mv src/mochijson2.erl . ; cd ..}"`
+        : `if [ -d src ]; then cd src ; mv src/mochijson2.erl . ; cd ..; fi`,
     ],
     repos: ["https://github.com/mochi/mochiweb"],
     descriptions: [
@@ -21,10 +21,10 @@ More about MIT License here: https://github.com/mochi/mochiweb/blob/master/LICEN
     files: ["mochijson2.erl"],
     // We copy to previous folder as didn't work from current folder (Only on Nexss Programmer Projects).
     commands: [
-      "if ! command -v mix; then nexss erl install; nexss exs install; fi",
-      "mix local.hex --force",
-      "mix deps.get",
+      "if ! command -v mix &> /dev/null; then nexss erl install; nexss exs install; fi",
       "erlc mochijson2.erl",
+      // "mix local.hex --force",
+      // "mix deps.get",
     ],
     repos: ["https://github.com/mochi/mochiweb"],
     descriptions: [
