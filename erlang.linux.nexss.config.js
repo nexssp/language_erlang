@@ -2,7 +2,7 @@ let languageConfig = Object.assign({}, require("./erlang.win32.nexss.config"));
 const sudo = process.sudo;
 languageConfig.compilers = {
   erlang: {
-    install: `apt install -y erlang`,
+    install: `${sudo}apt install -y erlang`,
     command: "escript",
     args: "<file>",
     help: ``,
@@ -25,7 +25,7 @@ ${sudo}apt-get -y install esl-erlang`;
     break;
   default:
     languageConfig.compilers.erlang.install = process.replacePMByDistro(
-      "apt update && apt install -y erlang"
+      `${sudo}apt update && ${sudo}apt install -y erlang`
     );
     break;
 }
