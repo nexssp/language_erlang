@@ -13,7 +13,7 @@ if ($testPath -eq $True) {
 }
 
 # Building
-git clone https://github.com/rebar/rebar3.git $temp
+git clone --depth=1 https://github.com/rebar/rebar3.git $temp
 Write-Output "Building.."
 cd $temp
 $command = $temp + "\bootstrap.bat"
